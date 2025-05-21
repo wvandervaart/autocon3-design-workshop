@@ -1,0 +1,13 @@
+{% if interface["ip_addresses"] | length > 0 %}
+   no switchport
+{% for addr in interface["ip_addresses"] %}
+{% if addr["address"] is defined %}
+   ip address {{ addr["address"] }}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% if interface["enabled"] == false %}
+   shutdown
+{% endif %}
+   ip ospf area 0.0.0.0
+
