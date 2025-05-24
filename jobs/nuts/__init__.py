@@ -61,7 +61,7 @@ class NutJob(Job):
         
         generate_test_file(
             template_filename="hosts.yaml.j2",
-            output_filename="inventory/hosts.yaml",
+            output_filename="/source/inventory/hosts.yaml",
             topology=topology,
             nodes=nodes,
         )
